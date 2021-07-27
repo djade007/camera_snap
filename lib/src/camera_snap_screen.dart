@@ -6,6 +6,10 @@ import 'package:flutter/material.dart';
 
 import 'camera_type.dart';
 
+const _defaultPermissionMessage =
+    'You need to grant this app permission to use your '
+    'camera to complete this action.';
+
 /// A screen to capture a user's picture using the front facing camera
 /// and returns a temporary path to the picture.
 ///
@@ -28,10 +32,14 @@ class CameraSnapScreen extends StatefulWidget {
   /// The widget to display at the Scaffold's appbar.
   final PreferredSizeWidget? appBar;
 
+  /// The error message to display, when user declines camera permission.
+  final String permissionErrorMessage;
+
   const CameraSnapScreen({
     Key? key,
     this.cameraType: CameraType.front,
     this.appBar,
+    this.permissionErrorMessage: _defaultPermissionMessage,
   }) : super(key: key);
 
   @override
@@ -228,6 +236,10 @@ class _CameraSnapScreenState extends State<CameraSnapScreen>
   }
 
   void showInSnackBar(String message) {
+    if (message.contains('permission not granted')) {
+      message = widget.permissionErrorMessage;
+    }
+
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(message),
@@ -388,6 +400,8 @@ class _CameraSnapScreenState extends State<CameraSnapScreen>
 }
 
 void logError(String code, String? message) {
+  if (!kDebugMode) return;
+
   if (message != null) {
     print('Error: $code\nError Message: $message');
   } else {
