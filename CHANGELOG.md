@@ -1,3 +1,6 @@
+## 0.0.3
+* Update camera plugin
+
 ## 0.0.2
 * Allow custom error message
 
