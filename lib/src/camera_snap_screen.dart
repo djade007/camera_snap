@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:camera/camera.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 import 'camera_type.dart';
 
@@ -317,6 +318,11 @@ class _CameraSnapScreenState extends State<CameraSnapScreen>
     }
 
     try {
+      var status = await Permission.camera.status;
+      if (status.isDenied) {
+        controller = null;
+        return null;
+      }
       await controller!.setFlashMode(mode);
     } on CameraException catch (e) {
       _showCameraException(e);
