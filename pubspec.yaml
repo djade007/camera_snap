@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  camera: ^0.9.4+14
+  camera: ^0.9.4+16
   permission_handler: ^9.2.0
 
 
