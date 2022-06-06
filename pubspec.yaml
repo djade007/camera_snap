@@ -1,6 +1,6 @@
 name: camera_snap
 description: Capture image using the selfie camera or the back camera.
-version: 0.0.4
+version: 0.1.0
 homepage: https://github.com/djade007/camera_snap
 
 environment:

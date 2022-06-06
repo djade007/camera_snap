@@ -1,4 +1,4 @@
-## 0.0.4
+## 0.1.0
 * Update camera plugin
 
 ## 0.0.2
