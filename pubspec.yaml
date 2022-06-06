@@ -1,6 +1,6 @@
 name: camera_snap
 description: Capture image using the selfie camera or the back camera.
-version: 0.0.2
+version: 0.0.4
 homepage: https://github.com/djade007/camera_snap
 
 environment:
@@ -10,9 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  camera: ^0.9.2+2
-  permission_handler: ^8.1.4+2
-
+  camera: ^0.9.7+1
+  permission_handler: ^9.2.0
 
 dev_dependencies:
   flutter_test:

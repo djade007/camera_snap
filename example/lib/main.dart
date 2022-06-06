@@ -1,4 +1,4 @@
-import 'package:example/example.dart';
+import 'package:example/picker_example.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SnapImageExample(),
+      home: PickerExample(),
     );
   }
 }
