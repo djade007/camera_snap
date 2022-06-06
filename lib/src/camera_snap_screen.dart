@@ -399,7 +399,7 @@ class _CameraSnapScreenState extends State<CameraSnapScreen>
 
   @override
   void dispose() {
-    WidgetsBinding.instance?.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     _flashModeControlRowAnimationController.dispose();
     super.dispose();
   }
